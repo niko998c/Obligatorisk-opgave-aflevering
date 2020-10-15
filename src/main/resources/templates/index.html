@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+          integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+<a href="/createStudent" class="btn btn-del">Create Student</a>
+<a href="/createTeacher" class="btn btn-del">Create Teacher</a>
+<a href="/createCourse" class="btn btn-del">Create Course</a>
+<h1></h1>
+<table>
+    <h1>Studens</h1>
+    <tr>
+        <th>First Name :</th>
+        <th>Last Name :</th>
+        <th>Courses :</th>
+    </tr>
+    <tr th:each="student : ${students}">
+        <td th:text="${student.getFirstName()}"></td>
+        <td th:text="${student.getLastName()}"></td>
+        <td th:text="${student.getCourses()}"></td>
+    </tr>
+</table>
+<table>
+    <h1>Teachers</h1>
+    <tr>
+        <th>First Name :</th>
+        <th>Last Name :</th>
+        <th>Courses :</th>
+    </tr>
+    <tr th:each="teacher : ${teachers}">
+        <td th:text="${teacher.getFirstName()}"></td>
+        <td th:text="${teacher.getLastName()}"></td>
+        <td th:text="${teacher.getCourses()}"></td>
+    </tr>
+</table>
+<table>
+    <h1>Courses</h1>
+    <tr>
+        <th>Course Name :</th>
+        <th>Teacher :</th>
+        <th>Students :</th>
+    </tr>
+    <tr th:each="course : ${courses}">
+        <td th:text="${course.getCourseName()}"></td>
+        <td th:text="${course.getTeacher()}"></td>
+        <td th:text="${course.getStudents()}"></td>
+    </tr>
+</table>
+</body>
+</html>
